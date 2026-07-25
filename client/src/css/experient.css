@@ -1,0 +1,238 @@
+/** =====================
+ * Experient start
+ ====================== */
+#experient.container {
+  flex-direction: column;
+}
+.exper {
+  max-width: 850px;
+  min-width: 380px;
+  width: 53%;
+  /* background-color: red; */
+}
+
+.exper .content-exp,
+.content {
+  width: 100%;
+  display: flex;
+  color: white;
+  /* background-color: var(--light-slate); */
+  /* justify-content: space-around; */
+  /* padding: 10px; */
+}
+
+.content-exp .sidebar ul {
+  list-style: none;
+}
+.content-exp .sidebar ul li {
+  transition: all 0.9s ease;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  color: var(--text-warna-sedang);
+  border-left: 1px solid var(--lightest-navy);
+}
+.content-exp .sidebar ul li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.content-exp .sidebar ul li.active {
+  border-left-color: var(--green);
+  color: var(--green);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.content-exp .con-nav {
+  flex: 1;
+  padding: 0 1rem;
+  position: relative;
+  min-height: 200px; /* biar nggak mepet pas kosong */
+}
+.tab {
+  display: none; /* default: hilang */
+  opacity: 0;
+  transform: translateX(-30px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-color: red; */
+  /* height: 500px; */
+}
+.tab a,
+.work .k-cont .project-description span a {
+  color: var(--green);
+  text-decoration: none;
+  font-style: italic;
+  transition: all 0.3s;
+  position: relative;
+}
+.tab a:hover,
+.work .k-cont .project-description span a:hover {
+  text-decoration: underline;
+}
+.tab h2 {
+  color: var(--text-warna-besar);
+  text-transform: capitalize;
+}
+.tab span {
+  font-family: "Asimovian", serif;
+}
+.tab p,
+.tab .tech-con-img,
+.tab ul {
+  margin-top: 1rem;
+}
+.tab p,
+.tab span,
+.tab ul {
+  font-size: 0.85rem;
+  color: var(--text-warna-sedang);
+}
+.tab ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 10px;
+  gap: 1em;
+}
+.tab ul li {
+  padding-left: 10px;
+}
+.tab ul li::marker {
+  content: ">";
+  color: var(--green);
+}
+.tab .tech-con-img {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2em;
+  justify-content: center;
+}
+.tab .tech-con-img img {
+  width: 13%;
+  transition: all 0.9s;
+  filter: grayscale(10);
+}
+.tab .tech-con-img img:hover {
+  filter: grayscale(0);
+}
+
+.tab.active {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+/* .c-jnt{
+    background-color: rebeccapurple;
+}
+.c-tes{
+    background-color: blue;
+}
+.c-tech{http://127.0.0.1:5500/
+    background-color: green;
+} */
+
+.content-serti {
+  position: relative;
+  height: auto;
+  width: 80%;
+}
+.content-serti .cour-2 {
+  margin: 100px auto;
+  /* max-width: 1000px; */
+  width: auto;
+  border-radius: 8px;
+  /* border: 5px solid red; */
+  display: flex;
+  overflow-x: auto;
+}
+
+.img-card {
+  scroll-snap-align: start;
+  aspect-ratio: 5/3;
+  font-size: 2rem;
+  flex: 0 0 20em;
+  align-content: center;
+}
+.cour-2 {
+  scroll-behavior: smooth;
+  anchor-name: --cour-2;
+  scroll-snap-type: x mandatory;
+  scroll-marker-group: after;
+  margin: 3em auto;
+  width: 95%;
+  display: flex;
+  overflow-x: auto;
+  transition: all 0.5s ease;
+}
+
+.cour-2::-webkit-scrollbar {
+  display: none;
+}
+
+.cour-2::scroll-button(right),
+.cour-2::scroll-button(left) {
+  content: "";
+  border: none;
+  background: linear-gradient(45deg, var(--green));
+  font-family: Consolas;
+  font-size: 3rem;
+  color: black;
+  height: 4rem;
+  width: 4rem;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+  /* border-radius: 15px; */
+  filter: blur(2px);
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --cour-2;
+  position-area: right bottom;
+  translate: -100%;
+}
+
+.cour-2::scroll-button(left) {
+  clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+  position-area: left bottom;
+  translate: 100%;
+}
+
+.cour-2::scroll-button(right):disabled,
+.cour-2::scroll-button(left):disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.cour-2::scroll-marker-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+  position: fixed;
+  position-anchor: --cour-2;
+  position-area: center bottom;
+  transform: translateY(30px);
+}
+
+.img-card::scroll-marker {
+  content: "";
+  height: 3px;
+  width: 0.7em;
+  border-radius: 10%;
+  border: 1px solid var(--green);
+  background-color: var(--navy-shadow);
+}
+
+.img-card::scroll-marker:target-current {
+  background-color: var(--green);
+}
+
+.img-card img {
+  width: 100%;
+}
+
+/* experient end */

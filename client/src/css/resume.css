@@ -1,0 +1,38 @@
+/** =====================
+ * Resume start
+ ====================== */
+.resume {
+  padding: 5rem 1rem 5rem;
+  height: auto;
+  display: flex;
+  color: var(--text-warna-besar);
+  flex-direction: column;
+  background-color: var(--navy-shadow);
+  backdrop-filter: blur(10px);
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.8s ease;
+}
+.resume h2 {
+  font-family: "Kode_Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3rem;
+}
+.resume .button-resume {
+  font-family: "Asimovian", serif;
+  background-color: transparent;
+  border: 2px solid var(--text-warna-besar);
+  color: var(--text-warna-kecil);
+  font-size: 1rem;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.resume .button-resume:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* resume end */

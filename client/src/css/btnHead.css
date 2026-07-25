@@ -1,0 +1,75 @@
+.btn-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 40%;
+  min-width: 450px;
+}
+
+.btn-head nav {
+  text-transform: capitalize;
+  font-family: "Kode_Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: red; */
+  width: 60%;
+}
+
+.btn-head button {
+  font-family: "Asimovian", serif;
+  cursor: pointer;
+  padding: 0.35em 0.5em;
+  font-size: 0.9rem;
+  background-color: transparent;
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  color: var(--green);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-head button:hover {
+  transform: scale(0.95);
+}
+
+/* toggle start */
+.theme-togle {
+  display: flex;
+  position: relative;
+  background-color: var(--green-tint);
+  border: 1px solid var(--green);
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+}
+
+.theme-togle .toggle {
+  position: absolute;
+  top: 50%;
+  left: 1.5px;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  background-color: var(--dark-slate);
+  transition: all 0.8s;
+}
+
+.theme-togle input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 18px;
+  width: 38px;
+}
+
+.theme-togle input[type="checkbox"]:checked ~ div.toggle {
+  transform: translate(19.5px, -50%);
+  background-color: var(--lightest-slate);
+}
+/* toggle end */

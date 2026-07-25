@@ -1,0 +1,51 @@
+/** =====================
+ * Personal start
+ ====================== */
+.personal {
+  display: flex;
+  max-width: 1000px;
+  min-width: 400px;
+  width: 80%;
+  gap: 20px;
+}
+.personal h1 {
+  font-family: "Asimovian", serif;
+  line-height: 2em;
+  color: var(--text-warna-besar);
+}
+.personal p,
+.personal .hobi ul li {
+  font-family: "Kode_Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--text-warna-sedang);
+}
+.personal .hobi {
+  flex: 1;
+  min-width: 300px;
+}
+.personal .hobi ul {
+  list-style: none;
+}
+.personal .hobi ul li {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+.personal .hobi ul li:hover {
+  color: var(--green);
+}
+.personal .hobi svg {
+  min-width: 50px;
+  width: 50px;
+  margin: 10px;
+  /* color: var(--text-warna-kecil); */
+}
+.personal .goals {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* presonal end */

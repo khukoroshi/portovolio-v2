@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kode_Mono";
+  src: url("../fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Asimovian";
+  src: url("../fonts/Asimovian/Asimovian-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* cegah scroll horizontal */
+  box-sizing: border-box;
+}
+:root {
+  /* --var-bg: rgb(10, 43, 70); */
+  /* --var-bg: rgb(20, 56, 85); */
+  /* ini buat var asli */
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100, 255, 218, 0.4);
+  --white-grey: rgb(117, 130, 159);
+  /* ini buat var toggle theme */
+  --bg-image: url("../img/atap_sekolah\(malam\).webp");
+  --var-bg: var(--navy);
+  --text-warna-besar: var(--lightest-slate);
+  --text-warna-sedang: rgba(126, 136, 165, 1);
+  --text-warna-kecil: var(--light-slate);
+}
+
+body.light-theme {
+  --bg-image: url("../img/atap_sekolah\(pagi\).webp");
+  --var-bg: var(--white-grey);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: all 0.8s ease;
+}
+
+.container {
+  padding: 5rem 1rem 5rem;
+  background-color: var(--var-bg);
+  height: auto;
+  /* min-height: 90dvh; */
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.8s ease;
+}

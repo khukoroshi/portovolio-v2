@@ -1,0 +1,48 @@
+/** =====================
+ * Header start
+ ====================== */
+
+.mainHeader {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mainHeader.scrolled {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  /* background-color: red; */
+}
+
+.mainHeader a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.mainHeader a.active {
+  color: var(--green);
+}
+
+.mainHeader a:hover {
+  color: var(--green);
+}
+
+.mainHeader h1 {
+  font-size: clamp(1rem, calc(5vw + 0.7 rem), 2rem);
+  font-family: "Asimovian", serif;
+}
+
+/* header end */

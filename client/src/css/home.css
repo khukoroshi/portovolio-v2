@@ -1,0 +1,87 @@
+/** =====================
+ * Home start
+ ====================== */
+.home {
+  position: relative;
+  height: 120dvh;
+  padding-bottom: 20dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, var(--navy));
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  height: 5em;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, var(--white-grey));
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  height: 5em;
+}
+
+.home.active::before {
+  opacity: 0; /* hilang */
+}
+
+.home.active::after {
+  opacity: 1; /* muncul */
+}
+
+.home h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 2em;
+  font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
+}
+
+.home .animated-text {
+  font-size: clamp(0.5rem, calc(7vw + 0.2rem), 1rem);
+  font-family: "Asimovian", serif;
+  color: var(--text-warna-sedang);
+}
+
+.panah {
+  position: absolute;
+  bottom: 18%;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.panah .kiri,
+.panah .kanan {
+  border-radius: 50px;
+  border: 2px solid white;
+  width: 50px;
+  height: 0;
+  opacity: 0.3;
+}
+
+.panah .kiri {
+  transform-origin: left;
+  transform: rotate(-20deg) translateX(-0.4px);
+}
+.panah .kanan {
+  transform-origin: right;
+  transform: rotate(20deg) translateX(0.4px);
+}
+/* home end */
