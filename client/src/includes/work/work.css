@@ -1,0 +1,26 @@
+/** =====================
+ * Work start
+ ====================== */
+.work {
+  max-width: 1000px;
+  min-width: 400px;
+  width: 80%;
+}
+.k-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.k-cont .content {
+  position: relative;
+  /* background-color: gray; */
+  height: auto;
+  padding: 2px;
+  display: flex;
+  /* margin-bottom: 5rem; */
+  min-height: 350px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* work end */

@@ -1,7 +1,7 @@
 // import React from 'react'
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import "../css/home.css";
+import "./home.css";
 
 function TypingText() {
   const el = useRef(null);

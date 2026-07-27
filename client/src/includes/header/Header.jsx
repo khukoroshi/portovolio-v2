@@ -1,9 +1,9 @@
 // import React from 'react'
 // import clsx from 'clsx';
 
-import "../css/header.css";
-import ButtonMenu from "../components/ButtonMenu";
-import ButtonHead from "../components/ButtonHead";
+import "./header.css";
+import ButtonMenu from "../../components/ButtonMenu";
+import ButtonHead from "../../components/ButtonHead";
 
 function Header() {
   return (

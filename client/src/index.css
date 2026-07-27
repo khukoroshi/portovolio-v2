@@ -413,6 +413,17 @@ img {
   display: block;
 }
 
+.work .front,
+.i-about .front {
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: var(--green-tint);
+  transition: all 0.2s;
+}
+
 /* === Responsive untuk layar kecil === */
 @media (max-width: 768px) {
   /* Header padding lebih kecil */

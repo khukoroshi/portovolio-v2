@@ -1,7 +1,7 @@
 // import React from 'react'
 
-import "../css/about.css";
-import provile from "../assets/img/gprof1.webp";
+import "./about.css";
+import provile from "../../assets/img/gprof1.webp";
 
 const About = () => {
   return (

@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import "../css/tambahan.css";
+import "./tambahan.css";
 
 const tambahan = () => {
   return (

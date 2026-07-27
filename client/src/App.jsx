@@ -1,7 +1,12 @@
 // import React from 'react'
-import Header from "./includes/Header";
-import Home from "./includes/Home";
-import About from "./includes/About";
+import Header from "./includes/header/Header";
+import Home from "./includes/home/Home";
+import About from "./includes/about/About";
+// import Experient from "./includes/Experient";
+import Work from "./includes/work/Work";
+import Resume from "./includes/resume/Resume";
+import Personal from "./includes/personal/tambahan";
+import Footer from "./includes/footer/Footer";
 const App = () => {
   return (
     <>
@@ -9,6 +14,11 @@ const App = () => {
       <Header />
       <Home />
       <About />
+      {/* <Experient /> */}
+      <Work />
+      <Resume />
+      <Personal />
+      <Footer />
     </>
   );
 };

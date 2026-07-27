@@ -1,32 +1,13 @@
-/** =====================
- * Work start
- ====================== */
-.work {
-  max-width: 1000px;
-  min-width: 400px;
-  width: 80%;
-}
-.k-cont {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-.k-cont .content {
+.project-image {
+  /* margin: 1px 0; */
   position: relative;
-  /* background-color: gray; */
-  height: auto;
-  /* display: flex; */
-  /* margin-bottom: 5rem; */
-  min-height: 350px;
-  align-items: center;
-  justify-content: flex-end;
+  width: 55%;
 }
 
 .project-description {
   /* background-color: red; */
   position: absolute;
   left: 0;
-  /* right: 0; */
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
@@ -47,14 +28,14 @@
 .project-description h2:hover {
   color: var(--green);
 }
-.project-description span {
+.project-description .wordDesk {
   background-color: var(--light-navy);
   margin: 20px 0;
   padding: 20px;
   transition: all 0.5s;
   font-size: 0.9rem;
 }
-.project-description span:hover {
+.project-description .wordDesk:hover {
   box-shadow: -1px 3px 5px var(--navy-shadow);
 }
 .project-description ul {
@@ -64,38 +45,18 @@
   font-size: 0.8rem;
 }
 .work .content:nth-child(even) {
-  /* left: 0; */
   justify-content: flex-start;
 }
 
 .work .content:nth-child(even) .project-description {
-  /* transform: translate(100px,-50%); */
   right: 0;
   left: auto;
-  /* background-color: red; */
   align-items: flex-end;
 }
-.work .content:nth-child(even) .project-description span {
+.work .content:nth-child(even) .project-description .wordDesk {
   text-align: end;
 }
 
-.project-image {
-  /* margin: 1px 0; */
-  /* right: 0; */
-  position: relative;
-  width: 55%;
-  /* margin: 3rem 0; */
-}
-.work .front,
-.i-about .front {
-  position: absolute;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background-color: var(--green-tint);
-  transition: all 0.2s;
-}
 .work .front:hover {
   background-color: transparent;
 }
@@ -108,4 +69,3 @@
   transition: all 0.3s;
   filter: grayscale(100%);
 }
-/* work end */
