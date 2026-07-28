@@ -1,0 +1,106 @@
+/** =====================
+ * Popup start
+ ====================== */
+.overlay-popup {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  overflow-y: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(1, 1, 1, 0.1);
+  transition: opacity 0.4s ease;
+}
+.overlay-popup.show {
+  display: block;
+  opacity: 1;
+}
+.contact {
+  color: white;
+  border: 3px solid black;
+  border-radius: 30px;
+  backdrop-filter: blur(50px);
+  /* display: none; */
+  position: absolute;
+  height: 80%;
+  width: 90%;
+  max-height: 400px;
+  max-width: 700px;
+  /* height: 100vh;
+    width: 100%; */
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  opacity: 0;
+  background-color: var(--navy-shadow);
+  transform: translateX(-50%);
+  transition: all 0.4s ease;
+}
+
+#pop-con.show .contact,
+#futurePopUp.show .example {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-warna-besar);
+  cursor: pointer;
+  z-index: 10;
+}
+.btn-close:hover {
+  color: red;
+}
+
+/* Form Contact */
+.contact h2 {
+  color: var(--text-warna-besar);
+  font-family: "Kode_Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1.1;
+}
+.contact-form .con-input {
+  font-family: "Asimovian", serif;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid var(--text-warna-besar);
+  color: var(--text-warna-sedang);
+  font-size: 14px;
+  background-color: var(--dark-navy);
+}
+
+.contact-form button {
+  font-family: "Asimovian", serif;
+  padding: 10px 20px;
+  background: var(--light-navy);
+  border: 2px solid var(--green);
+  color: var(--text-warna-kecil);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--navy);
+}
+
+.contact-form .con-input:focus {
+  border: 2px solid var(--green);
+}
+
+/* popup end */
