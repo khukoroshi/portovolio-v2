@@ -18,12 +18,12 @@ const CKanan = () => {
   );
 };
 
-const BarToggle = ({ posisiKanan }) => {
+const BarToggle = ({ posisiKanan, isStickyVisible }) => {
   return (
     // kalo true = kanan(r), false = kiri(l)
     <div
       id={`sticky-content-${posisiKanan ? "right" : "left"}`}
-      className={`s-c-${posisiKanan ? "r" : "l"}`}
+      className={`s-c-${posisiKanan ? "r" : "l"} ${isStickyVisible ? "show" : ""}`}
     >
       {posisiKanan ? <CKanan /> : <CKiri />}
       <div className="line"></div>

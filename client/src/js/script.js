@@ -10,16 +10,13 @@ const custom = cubicBezier(0.68, -0.55, 0.27, 1.55);
 
 // let toggleTheme; // supaya bisa dipakai lintas section
 
-
-
-
 /** =====================
  * Header (efek scroll + nav aktif + smooth scroll + popup)
  ====================== */
 const mainHeader = document.getElementById("main-header");
-const stickyBoxRight = document.getElementById('sticky-content-right');
-const stickyBoxLeft = document.getElementById('sticky-content-left');
-  // efek scroll
+const stickyBoxRight = document.getElementById("sticky-content-right");
+const stickyBoxLeft = document.getElementById("sticky-content-left");
+// efek scroll
 window.addEventListener("scroll", () => {
   const scrollPos = window.scrollY;
   const windowHeight = window.innerHeight - 50;
@@ -32,26 +29,25 @@ window.addEventListener("scroll", () => {
   }
   // Jika sudah scroll lebih dari 100vh, munculkan
   if (scrollPos > windowHeight) {
-    stickyBoxRight.classList.add('show');
-    stickyBoxLeft.classList.add('show');
+    stickyBoxRight.classList.add("show");
+    stickyBoxLeft.classList.add("show");
   } else {
-    stickyBoxRight.classList.remove('show');
-    stickyBoxLeft.classList.remove('show');
+    stickyBoxRight.classList.remove("show");
+    stickyBoxLeft.classList.remove("show");
   }
-
-  // Jika sudah di paling bawah, bisa tambahkan efek lain misalnya
-  // if (scrollPos >= totalHeight - 50) {
-  //   stickyBoxRight.style.background = '#f00';
-  //   // stickyBoxRight.textContent = 'Kamu sudah sampai bawah!';
-  //   stickyBoxLeft.style.background = '#f00';
-  //   // stickyBoxLeft.textContent = 'Kamu sudah sampai bawah!';
-  // } else {
-  //   stickyBoxRight.style.background = '#0f0';
-  //   // stickyBoxRight.textContent = 'Aku muncul setelah kamu scroll jauh!';
-  //   stickyBoxLeft.style.background = '#0f0';
-  //   // stickyBoxLeft.textContent = 'Aku muncul setelah kamu scroll jauh!';
-  // }
 });
+// Jika sudah di paling bawah, bisa tambahkan efek lain misalnya
+// if (scrollPos >= totalHeight - 50) {
+//   stickyBoxRight.style.background = '#f00';
+//   // stickyBoxRight.textContent = 'Kamu sudah sampai bawah!';
+//   stickyBoxLeft.style.background = '#f00';
+//   // stickyBoxLeft.textContent = 'Kamu sudah sampai bawah!';
+// } else {
+//   stickyBoxRight.style.background = '#0f0';
+//   // stickyBoxRight.textContent = 'Aku muncul setelah kamu scroll jauh!';
+//   stickyBoxLeft.style.background = '#0f0';
+//   // stickyBoxLeft.textContent = 'Aku muncul setelah kamu scroll jauh!';
+// }
 
 // nav + smooth scroll
 const navLinks = mainHeader.querySelectorAll("a[href^='#']");
@@ -67,11 +63,11 @@ navLinks.forEach((link) => {
 });
 
 // humberger menu
-const hamburgerMenu = document.getElementById('hMenu');
-const navButtons = document.querySelector('#main-header .btn-head');
-if(hamburgerMenu && navButtons){
-  hamburgerMenu.addEventListener('change', () => {
-    navButtons.classList.toggle('active', hamburgerMenu.checked);
+const hamburgerMenu = document.getElementById("hMenu");
+const navButtons = document.querySelector("#main-header .btn-head");
+if (hamburgerMenu && navButtons) {
+  hamburgerMenu.addEventListener("change", () => {
+    navButtons.classList.toggle("active", hamburgerMenu.checked);
   });
 }
 
@@ -80,15 +76,15 @@ const btnContact = document.getElementById("btnPopCon");
 const pContact = document.getElementById("pop-con");
 const btnClose = document.getElementById("btnClosePopCon");
 // klik tombol
-btnContact.addEventListener("click", () =>{
+btnContact.addEventListener("click", () => {
   pContact.style.display = "flex";
   setTimeout(() => pContact.classList.add("show"), 10);
 });
 // btnContact.onclick = function(){
 // }
-btnClose.addEventListener("click", () =>{
+btnClose.addEventListener("click", () => {
   pContact.classList.remove("show");
-  setTimeout(() => pContact.style.display = "none", 400);
+  setTimeout(() => (pContact.style.display = "none"), 400);
 });
 // klik tombol close
 // btnClose.onclick = function(){
@@ -97,20 +93,20 @@ btnClose.addEventListener("click", () =>{
 const pFuture = document.getElementById("futurePopUp");
 // toggleTheme simpan di variabel global
 const toggleTheme = document.getElementById("toggleTheme");
-toggleTheme.addEventListener("click", () =>{
+toggleTheme.addEventListener("click", () => {
   pFuture.style.display = "flex";
   setTimeout(() => pFuture.classList.add("show"), 10);
 });
-window.onclick = function(event){
-  if(event.target == pContact){
+window.onclick = function (event) {
+  if (event.target == pContact) {
     pContact.classList.remove("show");
-    this.setTimeout(() => pContact.style.display = "none", 400);
+    this.setTimeout(() => (pContact.style.display = "none"), 400);
   }
-  if(event.target == pFuture){
+  if (event.target == pFuture) {
     pFuture.classList.remove("show");
-    this.setTimeout(() => pFuture.style.display = "none", 400);
+    this.setTimeout(() => (pFuture.style.display = "none"), 400);
   }
-}
+};
 
 /** =====================
  * Home (toggle theme + animasi home)
@@ -126,11 +122,8 @@ window.onclick = function(event){
 /** =====================
  * About (image)
  ====================== */
-const imgAbout = document.getElementById('gbr-about');
+const imgAbout = document.getElementById("gbr-about");
 // imgAbout.preventDefault();
-
-
-
 
 /** =====================
  * Experient (sidebar tab)

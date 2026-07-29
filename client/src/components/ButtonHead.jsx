@@ -1,7 +1,7 @@
 // import React from 'react'
 import "../css/btnHead.css";
 
-const ButtonHead = () => {
+const ButtonHead = ({ contactOpen }) => {
   return (
     <div className="btn-head">
       <nav>
@@ -10,7 +10,9 @@ const ButtonHead = () => {
         <a href="#work">work</a>
       </nav>
       <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <button id="btnPopCon">contact</button>
+        <button id="btnPopCon" onClick={contactOpen}>
+          contact
+        </button>
         <div className="theme-togle">
           <input type="checkbox" name="" id="toggleTheme" />
           <div className="toggle"></div>

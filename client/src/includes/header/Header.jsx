@@ -5,17 +5,17 @@ import "./header.css";
 import ButtonMenu from "../../components/ButtonMenu";
 import ButtonHead from "../../components/ButtonHead";
 
-function Header() {
+function Header({ contactOpen, isScroll }) {
   return (
     <div id="header">
-      <header className="mainHeader">
+      <header className={`mainHeader ${isScroll ? "scrolled" : ""}`}>
         <h1>
           <a href="#home" className="active">
             Haikal Firansyah
           </a>
         </h1>
         <ButtonMenu />
-        <ButtonHead />
+        <ButtonHead contactOpen={contactOpen} />
       </header>
     </div>
   );

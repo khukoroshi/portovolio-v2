@@ -2,11 +2,11 @@
 
 import "./popup.css";
 
-const Popup = () => {
+const Popup = ({ contactClose, contact }) => {
   return (
-    <div id="pop-con" className="overlay-popup">
+    <div id="pop-con" className={`overlay-popup ${contact ? "show" : ""}`}>
       <section className="contact">
-        <span id="btnClosePopCon" className="btn-close">
+        <span id="btnClosePopCon" className="btn-close" onClick={contactClose}>
           &times;
         </span>
         <h2>Get in touch</h2>

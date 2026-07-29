@@ -11,8 +11,7 @@
   /* background-color: red; */
 }
 
-.exper .content-exp,
-.content {
+.exper .content-exp {
   width: 100%;
   display: flex;
   color: white;

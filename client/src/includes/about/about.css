@@ -9,6 +9,9 @@
 
 .a-bout .content {
   justify-content: space-between;
+  width: 100%;
+  display: flex;
+  color: white;
   /* background-color: black; */
   align-items: center;
   gap: 30px;
