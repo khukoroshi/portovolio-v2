@@ -1,8 +1,8 @@
 // import React from "react";
 
-const ExperientWork = () => {
+const ExperientWork = ({ activeTab }) => {
   return (
-    <div id="c-jnt" className="tab active">
+    <div id="c-jnt" className={`tab ${activeTab === "c-jnt" ? "active" : ""}`}>
       <h2>Web developer J&T Cargo NGP014B</h2>
       <span>january - april 2024</span>
       <ul>

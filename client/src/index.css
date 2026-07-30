@@ -89,10 +89,7 @@ body {
   overflow-x: hidden; /* cegah scroll horizontal */
   box-sizing: border-box;
 }
-:root {
-  /* --var-bg: rgb(10, 43, 70); */
-  /* --var-bg: rgb(20, 56, 85); */
-  /* ini buat var asli */
+/* :root {
   --dark-navy: #020c1b;
   --navy: #0a192f;
   --light-navy: #112240;
@@ -106,12 +103,60 @@ body {
   --green: #64ffda;
   --green-tint: rgba(100, 255, 218, 0.4);
   --white-grey: rgb(117, 130, 159);
-  /* ini buat var toggle theme */
   --bg-image: url("./assets/img/atap_sekolah\(malam\).webp");
   --var-bg: var(--navy);
   --text-warna-besar: var(--lightest-slate);
   --text-warna-sedang: rgba(126, 136, 165, 1);
   --text-warna-kecil: var(--light-slate);
+} */
+
+/* 1. Nilai variabel umum / statis (yang nilainya TIDAK PERNAH berubah) */
+:root {
+  --font-main: "Inter", sans-serif;
+  --transition-speed: 0.3s;
+
+  /* Variabel Asli (Hex) untuk referensi */
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --lightest-navy: #233554;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --dark-slate: #495670;
+  --lightest-slate: #ccd6f6;
+  --green-neon: #64ffda;
+  --green-dark: #0d9488;
+  --white-grey: rgb(117, 130, 159);
+  --green-tint: rgba(100, 255, 218, 0.4);
+  --white: #e6f1ff;
+}
+
+/* 2. Tema bawaan (Default: DARK MODE) */
+:root,
+[data-theme="dark"] {
+  --bg-image: url("./assets/img/atap_sekolah(malam).webp");
+  --var-bg: var(--navy);
+  --card-bg: var(--light-navy);
+  --green: var(--green-neon);
+
+  /* Hierarki Teks Dark Mode */
+  --text-warna-besar: var(--lightest-slate);
+  --text-warna-sedang: rgba(126, 136, 165, 1);
+  --text-warna-kecil: var(--light-slate);
+}
+
+/* 3. Tema LIGHT MODE (Otomatis menimpa jika atribut data-theme="light") */
+[data-theme="light"] {
+  --bg-image: url("./assets/img/atap_sekolah(pagi).webp");
+  --var-bg: #f8fafc; /* Latar belakang terang */
+  --card-bg: #ffffff; /* Latar kartu putih bersih */
+  --green: var(--green-dark); /* Hijau gelap agar kontras */
+
+  /* Hierarki Teks Light Mode */
+  --text-warna-besar: #0f172a; /* Gelap (Hampir Hitam) */
+  --text-warna-sedang: #334155;
+  --text-warna-kecil: #64748b;
 }
 
 body.light-theme {

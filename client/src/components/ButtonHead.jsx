@@ -1,21 +1,51 @@
 // import React from 'react'
 import "../css/btnHead.css";
+// import sun from "../assets/img/sun.svg";
+import { useState, useEffect } from "react";
+// Daftar navigasi
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experient" },
+  { label: "Work", href: "#work" },
+];
 
-const ButtonHead = ({ contactOpen }) => {
+const ButtonHead = ({ activeNav, handleNavClick, contactOpen }) => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme === "dark" : true;
+  });
+
+  useEffect(() => {
+    const theme = isDarkMode ? "dark" : "light";
+
+    // Set atribut HTML
+    document.documentElement.setAttribute("data-theme", theme);
+
+    // Simpan ke localStorage
+    localStorage.setItem("theme", theme);
+  }, [isDarkMode]);
+
   return (
     <div className="btn-head">
       <nav>
-        <a href="#about">about</a>
-        <a href="#experient">experience</a>
-        <a href="#work">work</a>
+        {navItems.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className={activeNav === item.href ? "active" : ""}
+            onClick={(e) => handleNavClick(e, item.href)}
+          >
+            {item.label}
+          </a>
+        ))}
       </nav>
       <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
         <button id="btnPopCon" onClick={contactOpen}>
           contact
         </button>
-        <div className="theme-togle">
-          <input type="checkbox" name="" id="toggleTheme" />
-          <div className="toggle"></div>
+
+        <div className="themeToggle" onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode ? iconTheme[1] : iconTheme[0]}
         </div>
       </div>
     </div>
@@ -23,3 +53,46 @@ const ButtonHead = ({ contactOpen }) => {
 };
 //
 export default ButtonHead;
+
+const iconTheme = [
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="256"
+    height="256"
+    viewBox="0 0 256 256"
+    fill="currentColor"
+  >
+    <g transform="translate(1.407 1.407) scale(2.81)">
+      <path d="M 45 11.861 c 2.927 0 5.764 0.383 8.467 1.096 C 51.156 7.54 48.279 3.09 45 0 c -3.279 3.09 -6.156 7.54 -8.467 12.957 C 39.236 12.245 42.073 11.861 45 11.861 z" />
+      <path d="M 73.641 28.339 c 2.199 -5.468 3.312 -10.652 3.178 -15.159 c -4.506 -0.133 -9.691 0.979 -15.159 3.179 C 66.617 19.248 70.752 23.383 73.641 28.339 z" />
+      <path d="M 28.339 16.359 c -5.468 -2.199 -10.652 -3.312 -15.159 -3.178 c -0.133 4.506 0.979 9.691 3.178 15.159 C 19.248 23.383 23.383 19.248 28.339 16.359 z" />
+      <path d="M 90 45 c -3.09 -3.279 -7.54 -6.156 -12.957 -8.467 c 0.713 2.703 1.096 5.54 1.096 8.467 s -0.383 5.764 -1.096 8.467 C 82.46 51.156 86.91 48.279 90 45 z" />
+      <path d="M 11.861 45 c 0 -2.927 0.383 -5.764 1.096 -8.467 C 7.54 38.844 3.09 41.721 0 45 c 3.09 3.279 7.54 6.156 12.957 8.467 C 12.245 50.764 11.861 47.927 11.861 45 z" />
+      <path d="M 61.661 73.641 c 5.468 2.199 10.652 3.312 15.159 3.178 c 0.133 -4.506 -0.979 -9.691 -3.178 -15.159 C 70.752 66.617 66.617 70.752 61.661 73.641 z" />
+      <path d="M 45 78.139 c -2.927 0 -5.764 -0.383 -8.467 -1.096 C 38.844 82.46 41.721 86.91 45 90 c 3.279 -3.09 6.156 -7.54 8.467 -12.957 C 50.764 77.755 47.927 78.139 45 78.139 z" />
+      <path d="M 16.359 61.661 c -2.199 5.468 -3.312 10.652 -3.178 15.159 c 4.506 0.133 9.691 -0.979 15.159 -3.178 C 23.383 70.752 19.248 66.617 16.359 61.661 z" />
+      <circle cx="45" cy="45" r="27" />
+    </g>
+  </svg>,
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="256"
+    height="256"
+    viewBox="0 0 256 256"
+    fill="currentColor"
+  >
+    <g transform="translate(1.407 1.407) scale(2.81)">
+      {/* Bulan Sabit */}
+      <path d="M 89.634 59.683 c -0.338 -0.276 -0.816 -0.302 -1.184 -0.062 c -16.514 10.864 -38.661 8.589 -52.661 -5.41 C 21.79 40.212 19.515 18.065 30.38 1.551 c 0.24 -0.366 0.215 -0.845 -0.062 -1.183 c -0.277 -0.339 -0.741 -0.46 -1.148 -0.294 c -5.826 2.349 -11.048 5.809 -15.523 10.283 c -18.195 18.195 -18.195 47.802 0 65.997 C 22.744 85.451 34.695 90 46.645 90 c 11.951 0 23.901 -4.549 32.999 -13.646 c 4.475 -4.476 7.935 -9.699 10.284 -15.523 C 90.091 60.425 89.972 59.96 89.634 59.683 z" />
+
+      {/* Bintang Besar */}
+      <path d="M 77.254 40.17 c -4.894 -1.63 -8.788 -5.525 -10.42 -10.419 c -0.27 -0.81 -0.992 -1.334 -1.841 -1.334 c -0.848 0 -1.571 0.524 -1.84 1.335 c -1.631 4.893 -5.526 8.787 -10.419 10.418 c -0.811 0.27 -1.334 0.993 -1.334 1.841 c 0 0.848 0.524 1.571 1.334 1.841 c 4.894 1.631 8.788 5.525 10.418 10.419 h 0.001 c 0.27 0.811 0.992 1.334 1.84 1.334 c 0.849 0 1.572 -0.524 1.841 -1.334 c 1.631 -4.893 5.526 -8.788 10.419 -10.419 c 0.812 -0.27 1.335 -0.992 1.335 -1.841 C 78.588 41.162 78.064 40.439 77.254 40.17 z" />
+
+      {/* Bintang Kecil 1 */}
+      <path d="M 81.635 11.577 c -2.597 -0.865 -4.664 -2.932 -5.53 -5.529 c -0.208 -0.626 -0.789 -1.046 -1.446 -1.046 c -0.657 0 -1.239 0.421 -1.448 1.047 c -0.864 2.596 -2.93 4.663 -5.527 5.528 c -0.626 0.208 -1.047 0.789 -1.047 1.446 s 0.421 1.238 1.046 1.446 c 2.596 0.865 4.663 2.932 5.529 5.529 c 0.208 0.625 0.788 1.046 1.445 1.047 c 0.001 0 0.001 0 0.002 0 c 0.656 0 1.238 -0.421 1.446 -1.046 c 0.866 -2.597 2.933 -4.664 5.53 -5.529 c 0.625 -0.209 1.046 -0.79 1.046 -1.446 C 82.681 12.367 82.26 11.786 81.635 11.577 z" />
+
+      {/* Bintang Kecil 2 */}
+      <path d="M 52.274 18.689 c -3.232 -1.076 -5.805 -3.649 -6.882 -6.881 c -0.224 -0.674 -0.849 -1.126 -1.556 -1.126 c -0.706 0 -1.331 0.453 -1.556 1.126 c -1.077 3.232 -3.649 5.804 -6.881 6.881 c -0.674 0.224 -1.126 0.849 -1.126 1.556 s 0.453 1.331 1.126 1.556 c 3.232 1.077 5.805 3.65 6.881 6.882 c 0.224 0.674 0.849 1.126 1.556 1.126 c 0.706 0 1.331 -0.453 1.556 -1.126 c 1.077 -3.232 3.649 -5.805 6.881 -6.882 c 0.674 -0.224 1.127 -0.849 1.127 -1.556 S 52.947 18.913 52.274 18.689 z" />
+    </g>
+  </svg>,
+];
