@@ -1,11 +1,12 @@
 // import React from 'react'
-import { SocialLink, SocialDataLink } from "../../components/socialLink";
+import SocialLink from "../../components/SocialLink";
+import { socialDataLink } from "../../data/database";
 import "./bartoggle.css";
 
 const CKiri = () => {
   return (
     <ul>
-      {SocialDataLink.map((data) => (
+      {socialDataLink.map((data) => (
         <SocialLink key={data.name} socialData={data} />
       ))}
     </ul>

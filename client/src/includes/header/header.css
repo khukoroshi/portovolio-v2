@@ -46,3 +46,12 @@
 }
 
 /* header end */
+
+@media (max-width: 768px) {
+  #main-header {
+    padding: 0.8rem 1rem;
+  }
+  /* #main-header.scrolled .btn-head{
+    backdrop-filter: blur(10px);
+  } */
+}

@@ -82,4 +82,26 @@
   transform: translateY(0);
   pointer-events: auto;
 }
+
+@media (max-height: 480px) {
+  .s-c-r a {
+    font-size: 0.6rem;
+    font-weight: 500;
+  }
+  .s-c-l a {
+    width: 15px;
+    height: 15px;
+  }
+  .s-c-r .line,
+  .s-c-l .line {
+    height: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .s-c-l,
+  .s-c-r {
+    /* display: none; */
+    visibility: hidden;
+  }
+}
 /* bartoggle end */

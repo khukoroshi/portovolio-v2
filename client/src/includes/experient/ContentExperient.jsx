@@ -2,17 +2,11 @@
 import { useState } from "react";
 import ExperientWork from "./ExperientWork";
 import TechImage from "./TechImage";
+import { menuItems } from "../../data/items";
 
 const ContentExperient = () => {
   // 1. Simpan ID tab yang sedang aktif di state (default: "tab1")
   const [activeTab, setActiveTab] = useState("c-jnt");
-
-  // Data menu sidebar (bisa kamu atur sesuai kebutuhan)
-  const menuItems = [
-    { id: "c-jnt", label: "J&T Cargo" },
-    { id: "c-tech", label: "Technology" },
-    // { id: "tab3", label: "Settings" },
-  ];
 
   return (
     <div className="content-exp">

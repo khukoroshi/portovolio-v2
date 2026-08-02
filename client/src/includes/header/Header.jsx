@@ -8,12 +8,11 @@ import ButtonHead from "../../components/ButtonHead";
 function Header({ contactOpen, isScroll }) {
   // State untuk menyimpan tautan navigasi yang sedang aktif
   const [activeNav, setActiveNav] = useState("#home");
-
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   // Handler Smooth Scroll versi React Modern
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setActiveNav(href); // Update class active
-
     // Cari elemen target berdasarkan ID (misal #about)
     const targetElement = document.querySelector(href);
     if (targetElement) {
@@ -23,6 +22,11 @@ function Header({ contactOpen, isScroll }) {
         block: "start",
       });
     }
+  };
+
+  // menuIsOpen ? console.log("menu di buka") : console.log("menu di tutup");
+  const closeMenu = () => {
+    setMenuIsOpen(false);
   };
 
   return (
@@ -37,11 +41,13 @@ function Header({ contactOpen, isScroll }) {
             Haikal Firansyah
           </a>
         </h1>
-        <ButtonMenu />
+        <ButtonMenu menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
         <ButtonHead
           activeNav={activeNav}
           handleNavClick={handleNavClick}
           contactOpen={contactOpen}
+          closeMenu={closeMenu}
+          menuIsOpen={menuIsOpen}
         />
       </header>
     </div>

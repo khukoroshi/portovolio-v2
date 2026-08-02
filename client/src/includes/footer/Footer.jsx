@@ -1,5 +1,6 @@
 // import React from 'react'
-import { SocialLink, SocialDataLink } from "../../components/socialLink";
+import SocialLink from "../../components/SocialLink";
+import { socialDataLink } from "../../data/database";
 import "./footer.css";
 
 const Footer = () => {
@@ -7,7 +8,7 @@ const Footer = () => {
     <div id="footer">
       <footer>
         <ul>
-          {SocialDataLink.map((data) => (
+          {socialDataLink.map((data) => (
             <SocialLink key={data.name} socialData={data} />
           ))}
         </ul>

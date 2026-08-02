@@ -33,6 +33,14 @@
   transform: scale(0.95);
 }
 
+.btn-head .btnConTogg {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10px;
+}
+
 /* toggle start */
 
 .themeToggle {
@@ -48,5 +56,69 @@
 }
 .themeToggle svg {
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Menu utama disembunyikan default */
+  .btn-head {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    /* height: auto; */
+    max-height: 0;
+    top: 100%; /* tepat di bawah header */
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 1.3rem 1rem 1rem 1rem;
+    gap: 1.3rem;
+    transform: translateY(-10px);
+    transition: all 0.6s ease-in-out;
+    opacity: 0;
+  }
+  .btn-head.active {
+    opacity: 1;
+    max-height: 600px;
+    /* display: flex; */
+    transform: translateY(0);
+  }
+  /* Navigasi diubah jadi kolom */
+  .btn-head nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: auto;
+    justify-content: center;
+    /* background: blue; */
+    flex-grow: 1;
+  }
+  .btn-head nav a {
+    /* background: red; */
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 0;
+  }
+  .btn-head nav a:hover,
+  .themeToggle:hover {
+    transform: translateY(2px);
+  }
+
+  .btn-head button {
+    width: 90px;
+    text-align: center;
+  }
+  .btn-head .btnConTogg {
+    /* width: 100%; */
+    justify-content: space-evenly;
+  }
+  .themeToggle {
+    width: 20px;
+    height: 20px;
+    transition: all 0.4s ease;
+  }
 }
 /* toggle end */

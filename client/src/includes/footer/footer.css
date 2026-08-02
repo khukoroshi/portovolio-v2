@@ -25,4 +25,9 @@ footer svg:hover {
   color: var(--green);
 }
 
+@media (max-width: 480px) {
+  footer ul {
+    display: flex;
+  }
+}
 /* footer end */

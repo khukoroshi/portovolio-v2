@@ -48,4 +48,22 @@
   min-width: 300px;
 }
 
+@media (max-width: 768px) {
+  .personal {
+    flex-wrap: wrap;
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .personal {
+    min-width: none;
+    width: 100%;
+  }
+  .personal .hobi svg {
+    min-width: 30px;
+    width: 30px;
+    margin: 7px;
+  }
+}
+
 /* presonal end */

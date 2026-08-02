@@ -29,8 +29,9 @@ const App = () => {
   const handleScroll = useMemo(
     () =>
       throttle(() => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 480) {
           // Opsional: Reset state jika ingin di HP tampilan kembali ke default
+          setIsScrolled(false);
           setIsStickyVisible(false);
           return; // Stop eksekusi di sini!
         }
