@@ -4,6 +4,8 @@
 .overlay-popup {
   display: none;
   opacity: 0;
+  /* visibility: hidden;
+  pointer-events: none; */
   position: fixed;
   top: 0;
   left: 0;
@@ -14,15 +16,34 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   background-color: rgba(1, 1, 1, 0.1);
-  transition: opacity 0.4s ease;
+  transition: all 0.4s ease;
+  /* animation: fadeOut 0.4s; */
 }
 .overlay-popup.show {
   display: block;
-  opacity: 1;
+  /* visibility: visible;
+  pointer-events: auto; */
+  animation: fadeIn 0.4s forwards;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* @keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+} */
 .contact {
-  color: white;
-  border: 3px solid black;
+  /* color: white; */
+  border: 3px solid var(--border);
   border-radius: 30px;
   backdrop-filter: blur(50px);
   /* display: none; */
@@ -37,7 +58,7 @@
   left: 50%;
   padding: 20px;
   opacity: 0;
-  background-color: var(--navy-shadow);
+  background-color: var(--transparan-bg);
   transform: translateX(-50%);
   transition: all 0.4s ease;
 }
@@ -77,16 +98,16 @@
   padding: 10px;
   margin: 8px 0;
   border-radius: 6px;
-  border: 1px solid var(--text-warna-besar);
+  border: 1px solid var(--border2);
   color: var(--text-warna-sedang);
   font-size: 14px;
-  background-color: var(--dark-navy);
+  background-color: var(--input-bg);
 }
 
 .contact-form button {
   font-family: "Asimovian", serif;
   padding: 10px 20px;
-  background: var(--light-navy);
+  background: var(--btn-input);
   border: 2px solid var(--green);
   color: var(--text-warna-kecil);
   border: none;
@@ -96,7 +117,7 @@
 }
 
 .contact-form button:hover {
-  background: var(--navy);
+  background: var(--var-bg);
 }
 
 .contact-form .con-input:focus {

@@ -2,13 +2,14 @@
  * Foooter start
  ====================== */
 footer {
-  background-color: var(--navy);
+  background-color: var(--var-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-bottom: 1rem;
   color: var(--dark-slate);
+  transition: all 0.8s ease;
 }
 footer ul {
   list-style: none;

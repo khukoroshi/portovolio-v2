@@ -27,10 +27,12 @@ const Home = () => {
   return (
     <div id="home">
       <div className="home">
-        <h1>HI, I'M HAIKAL</h1>
-        <p className="animated-text">
-          WEB DEVELOPER [ <TypingText /> ]
-        </p>
+        <div className="homeTeks">
+          <h1>HI, I'M HAIKAL</h1>
+          <p className="animated-text">
+            WEB DEVELOPER [ <TypingText /> ]
+          </p>
+        </div>
         <div className="panah">
           <div className="kanan"></div>
           <div className="kiri"></div>

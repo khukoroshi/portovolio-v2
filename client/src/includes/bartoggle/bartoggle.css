@@ -83,6 +83,15 @@
   pointer-events: auto;
 }
 
+@media (max-width: 768px) {
+  .s-c-r {
+    right: 15px;
+  }
+  .s-c-l {
+    left: 15px;
+  }
+}
+
 @media (max-height: 480px) {
   .s-c-r a {
     font-size: 0.6rem;

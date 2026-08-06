@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className="project-description">
         <h2>{project.title}</h2>
-        <span className="wordDesk">
+        <div className="wordDesk">
           {project.description}[
           {project.github ? (
             <a href={project.github}>link github</a>
@@ -19,7 +19,7 @@ const ProjectCard = ({ project }) => {
             <span>project privat</span>
           )}
           ].
-        </span>
+        </div>
         <ul>
           {project.technologies.map((tech) => (
             <li key={tech}>{tech}</li>

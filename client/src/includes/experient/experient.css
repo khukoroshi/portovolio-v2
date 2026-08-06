@@ -16,9 +16,6 @@
   width: 100%;
   display: flex;
   color: white;
-  /* background-color: var(--light-slate); */
-  /* justify-content: space-around; */
-  /* padding: 10px; */
 }
 
 .content-exp .sidebar ul {
@@ -131,16 +128,6 @@
   position: relative;
 }
 
-/* .c-jnt{
-    background-color: rebeccapurple;
-}
-.c-tes{
-    background-color: blue;
-}
-.c-tech{http://127.0.0.1:5500/
-    background-color: green;
-} */
-
 .content-serti {
   position: relative;
   height: auto;
@@ -153,11 +140,6 @@
   .exper {
     width: 85%;
   }
-  /* .cour-2::scroll-button(right),
-  .cour-2::scroll-button(left) {
-    width: 3rem;
-    height: 3rem;
-  } */
 }
 @media (max-width: 480px) {
   .exper .content-exp {
@@ -182,14 +164,18 @@
   .content-exp .con-nav {
     width: 90%;
   }
-  /* .content-serti {
+  .exper .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .tab h2 {
+    text-align: center;
+  }
+  .content-serti {
     width: 99%;
   }
-  .cour-2::scroll-button(right),
-  .cour-2::scroll-button(left) {
-    width: 2rem;
-    height: 2rem;
-  } */
 }
 
 /* experient end */

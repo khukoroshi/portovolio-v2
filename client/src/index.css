@@ -76,19 +76,6 @@
   font-style: normal;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden; /* cegah scroll horizontal */
-  box-sizing: border-box;
-}
 /* :root {
   --dark-navy: #020c1b;
   --navy: #0a192f;
@@ -117,9 +104,11 @@ body {
 
   /* Variabel Asli (Hex) untuk referensi */
   --dark-navy: #020c1b;
+  --gray: rgb(212, 202, 185);
   --navy: #0a192f;
   --light-navy: #112240;
   --navy-shadow: rgba(2, 12, 27, 0.7);
+  --gray-shadow: rgba(130, 130, 130, 0.7);
   --lightest-navy: #233554;
   --slate: #8892b0;
   --light-slate: #a8b2d1;
@@ -129,49 +118,118 @@ body {
   --green-dark: #0d9488;
   --white-grey: rgb(117, 130, 159);
   --green-tint: rgba(100, 255, 218, 0.4);
-  --white: #e6f1ff;
+  /* --white-blue: #bfdbff; */
+  --light-slate2: rgba(168, 178, 209, 0.4);
+  --bg-image-dark: url("./assets/img/atap_sekolah(malam).webp");
+  --bg-image-light: url("./assets/img/atap_sekolah(pagi).webp");
 }
 
 /* 2. Tema bawaan (Default: DARK MODE) */
 :root,
 [data-theme="dark"] {
-  --bg-image: url("./assets/img/atap_sekolah(malam).webp");
+  /* --bg-image: url("./assets/img/atap_sekolah(malam).webp"); */
   --var-bg: var(--navy);
-  --card-bg: var(--light-navy);
   --green: var(--green-neon);
 
   /* Hierarki Teks Dark Mode */
   --text-warna-besar: var(--lightest-slate);
   --text-warna-sedang: rgba(126, 136, 165, 1);
   --text-warna-kecil: var(--light-slate);
+  --bg-active: var(--green-tint);
+  --bg-header: rgba(0, 0, 0, 0.5);
+  --transparan-bg: var(--navy-shadow);
+  --card-desk: var(--light-navy);
+  --border: var(--dark-slate);
+  --border2: var(--lightest-slate);
+  --input-bg: var(--dark-navy);
+  --btn-input: var(--light-navy);
 }
 
 /* 3. Tema LIGHT MODE (Otomatis menimpa jika atribut data-theme="light") */
 [data-theme="light"] {
-  --bg-image: url("./assets/img/atap_sekolah(pagi).webp");
+  /* --bg-image: url("./assets/img/atap_sekolah(pagi).webp"); */
   --var-bg: #f8fafc; /* Latar belakang terang */
-  --card-bg: #ffffff; /* Latar kartu putih bersih */
+
   --green: var(--green-dark); /* Hijau gelap agar kontras */
 
   /* Hierarki Teks Light Mode */
   --text-warna-besar: #0f172a; /* Gelap (Hampir Hitam) */
   --text-warna-sedang: #334155;
   --text-warna-kecil: #64748b;
+  --bg-active: var(--light-slate2);
+  --bg-header: rgba(158, 158, 158, 0.5);
+  --transparan-bg: var(--gray-shadow);
+  --card-desk: var(--light-slate);
+  --border: var(--light-slate);
+  --border2: var(--dark-slate);
+  --input-bg: var(--light-slate);
+  --btn-input: var(--slate);
 }
 
-body.light-theme {
-  --bg-image: url("../img/atap_sekolah\(pagi\).webp");
-  --var-bg: var(--white-grey);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+html,
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* cegah scroll horizontal */
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   2. BODY (BACKGROUND UTAMA BERTRANSISI)
+   ========================================== */
+body {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Layer Gambar Background Ditumpuk di Belakang */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2; /* Di paling belakang agar tidak menutupi konten & overlay */
+  transition: all 0.8s ease;
+}
+
+/* Default: Dark Mode (Gambar Malam) */
+body::before {
+  background-image: var(--bg-image-dark);
+  opacity: 1;
+}
+
+/* Light Mode Layer (Gambar Pagi) */
+body::after {
+  background-image: var(--bg-image-light);
+  opacity: 0;
+}
+
+/* Peralihan Gambar saat Light Mode */
+[data-theme="light"] body::before {
+  opacity: 0;
+}
+[data-theme="light"] body::after {
+  opacity: 1;
+}
+
+/* body {
   font-family: "Poppins", sans-serif;
   background-image: var(--bg-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   transition: all 0.8s ease;
-}
+} */
 
 /* Class untuk mengunci scroll halaman */
 /* html.no-scroll,
@@ -291,6 +349,8 @@ img {
   .sub-bab-h2 {
     /* margin-left: 3rem; */
     width: 90%;
+    justify-content: center;
+    text-align: center;
     margin-left: 10px;
     margin-right: 10px;
   }

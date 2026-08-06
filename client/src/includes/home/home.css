@@ -1,51 +1,73 @@
 /** =====================
  * Home start
  ====================== */
+/* ==========================================
+   3. ELEMEN .HOME & OVERLAY GRADIENT
+   ========================================== */
 .home {
   position: relative;
   height: 120dvh;
   padding-bottom: 20dvh;
   background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.3);  */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: white;
+  z-index: 1;
 }
 
-.home::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, var(--navy));
-  opacity: 1;
-  transition: opacity 0.8s ease;
-  height: 5em;
-}
-
+/* Base Style Gradien Bawah .home */
+.home::before,
 .home::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, var(--white-grey));
-  opacity: 0;
-  transition: opacity 0.8s ease;
   height: 5em;
+  transition: opacity 1s ease-out; /* Disamakan durasinya dengan body (0.8s) */
+  pointer-events: none; /* Supaya tidak menghalangi klik pada tombol/link */
+  /* background: linear-gradient(transparent, var(--var-bg)); */
 }
 
-.home.active::before {
-  opacity: 0; /* hilang */
+/* Gradien Bawah - Dark Mode */
+.home::before {
+  background: linear-gradient(transparent, var(--navy));
+  opacity: 1;
 }
 
-.home.active::after {
-  opacity: 1; /* muncul */
+/* Gradien Bawah - Light Mode */
+.home::after {
+  background: linear-gradient(transparent, #f8fafc);
+  opacity: 0;
+}
+
+/* Peralihan Gradien saat Light Mode */
+[data-theme="light"] .home::before {
+  opacity: 0;
+}
+
+[data-theme="light"] .home::after {
+  opacity: 1;
+}
+
+.homeTeks {
+  /* background-color: green; */
+  position: relative;
+  max-height: 250px;
+  min-height: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .home h1 {
+  /* background-color: blue; */
+  /* padding: 0; */
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -53,7 +75,14 @@
   font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
 }
 
-.home .animated-text {
+.home .homeTeks .animated-text {
+  /* background-color: red; */
+  /* position: absolute;
+  left: 20px;
+  bottom: rem; */
+  /* transform: translateX(25%); */
+  width: auto;
+  padding: 2px 10px;
   font-size: clamp(0.5rem, calc(7vw + 0.2rem), 1rem);
   font-family: "Asimovian", serif;
   color: var(--text-warna-sedang);

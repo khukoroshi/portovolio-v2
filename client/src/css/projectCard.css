@@ -29,7 +29,7 @@
   color: var(--green);
 }
 .project-description .wordDesk {
-  background-color: var(--light-navy);
+  background-color: var(--card-desk);
   margin: 20px 0;
   padding: 20px;
   transition: all 0.5s;
@@ -39,6 +39,8 @@
   box-shadow: -1px 3px 5px var(--navy-shadow);
 }
 .project-description ul {
+  /* background-color:; */
+  color: var(--text-warna-sedang);
   list-style: none;
   display: flex;
   gap: 1rem;
@@ -52,6 +54,9 @@
   right: 0;
   left: auto;
   align-items: flex-end;
+}
+.work .content:nth-child(even) .project-description .wordDesk:hover {
+  box-shadow: 1px 3px 5px var(--navy-shadow);
 }
 .work .content:nth-child(even) .project-description .wordDesk {
   text-align: end;
