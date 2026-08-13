@@ -61,7 +61,12 @@
 .work .content:nth-child(even) .project-description .wordDesk {
   text-align: end;
 }
-
+.wordDesk a {
+  color: var(--green);
+}
+.wordDesk a:hover {
+  color: var(--text-warna-sedang);
+}
 .work .front:hover {
   background-color: transparent;
 }

@@ -2,6 +2,14 @@
 
 import "../css/projectCard.css";
 
+const AHref = ({ link, title }) => {
+  return (
+    <a href={link} target="_blank" rel="noreferrer">
+      {title}
+    </a>
+  );
+};
+
 const ProjectCard = ({ project }) => {
   return (
     <div className="content">
@@ -12,13 +20,15 @@ const ProjectCard = ({ project }) => {
       <div className="project-description">
         <h2>{project.title}</h2>
         <div className="wordDesk">
-          {project.description}[
+          {project.description} [
           {project.github ? (
-            <a href={project.github}>link github</a>
+            <AHref link={project.github} title="link github" />
           ) : (
             <span>project privat</span>
           )}
-          ].
+          ]{project.link ? "[" : null}
+          {project.link ? <AHref link={project.link} title="Demo" /> : null}
+          {project.link ? "]" : null}.
         </div>
         <ul>
           {project.technologies.map((tech) => (

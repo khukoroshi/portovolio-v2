@@ -1,6 +1,7 @@
 import companyProfile from "../assets/img/jnt_cargo.webp";
 import webGallery from "../assets/img/galery_web.webp";
 import toDo from "../assets/img/todo_list.webp";
+import civetexWeb from "../assets/img/civitex-web.webp";
 
 const socialDataLink = [
   {
@@ -30,6 +31,14 @@ const socialDataLink = [
 ];
 
 const dataWork = [
+  {
+    title: "Web Portofolio Company",
+    description:
+      "Ini adalah project vibe coding pertamaku membuat sebuah website portofolio perusahaan Civitex Academy.",
+    link: "https://civitex-academy-portofolio.vercel.app/",
+    technologies: ["React", "Tailwind CSS", "AI"],
+    image: civetexWeb,
+  },
   {
     title: "Web Profile Company",
     description:
