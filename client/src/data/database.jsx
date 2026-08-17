@@ -34,7 +34,7 @@ const dataWork = [
   {
     title: "Web Portofolio Company",
     description:
-      "Ini adalah project vibe coding pertamaku membuat sebuah website portofolio perusahaan Civitex Academy.",
+      "Ini adalah project vibe coding pertamaku membuat sebuah website portofolio perusahaan Civitex Academy. Aku memakai GeminiAI untuk planing dan membuat promp yang bagus untuk AI pembuat web, aku memakai BoltAI untuk mengeksekusi promp yang di buat GeminiAI, lalu aku memakai ChatGPT untuk menambahkan fitur baru dan Revisi",
     link: "https://civitex-academy-portofolio.vercel.app/",
     technologies: ["React", "Tailwind CSS", "AI"],
     image: civetexWeb,
@@ -44,7 +44,7 @@ const dataWork = [
     description:
       "Ini adalah project website pertama ku di perusahaan J&T Cargo NGP014B, yaitu sebuah web profile company yang minimalis dan sudah responsive.",
     github: "https://github.com/khukoroshi/Web-JTcargo",
-    technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    technologies: ["HTML", "CSS", "JavaScript"],
     image: companyProfile,
   },
   {
@@ -57,7 +57,7 @@ const dataWork = [
   {
     title: "Web To-Do List",
     description:
-      "Ini adalah sebuah website yang ku buat ketika ujian kompetensi di sekolah, sebuah To-Do List sederhana dengan sistem Login dan Register, dan waktu deadline.",
+      "Ini adalah sebuah website yang ku buat ketika ujian kompetensi di sekolah, sebuah To-Do List sederhana dengan sistem Login, Register, dan waktu deadline.",
     technologies: ["HTML", "CSS", "JavaScript", "PHP"],
     image: toDo,
   },

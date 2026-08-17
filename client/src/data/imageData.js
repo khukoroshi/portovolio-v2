@@ -7,8 +7,13 @@ import imgJava from "../assets/img/logo/java.png";
 import imgGit from "../assets/img/logo/git.png";
 import imgGitHub from "../assets/img/logo/github.png";
 import imgMySQL from "../assets/img/logo/mysql.png";
-import imgNodeJS from "../assets/img/logo/nodejs-96.png";
+import imgMongoDB from "../assets/img/logo/mongoDB.png";
+import imgPostgreSQL from "../assets/img/logo/postgresql.png";
+import imgNodeJS from "../assets/img/logo/nodejs.png";
 import imgReactJS from "../assets/img/logo/react.png";
+import imgVsCode from "../assets/img/logo/vscode.png";
+import imgRenPy from "../assets/img/logo/Ren'Py.png";
+import imgPostman from "../assets/img/logo/postman.png";
 import imgLinux from "../assets/img/logo/linux.png";
 import imgChatGPT from "../assets/img/logo/chatgpt.png";
 
@@ -50,12 +55,32 @@ const techLogoData = [
     url: imgMySQL,
   },
   {
+    name: "mongoDB",
+    url: imgMongoDB,
+  },
+  {
+    name: "postgresql",
+    url: imgPostgreSQL,
+  },
+  {
     name: "nodejs",
     url: imgNodeJS,
   },
   {
     name: "reactjs",
     url: imgReactJS,
+  },
+  {
+    name: "vscode",
+    url: imgVsCode,
+  },
+  {
+    name: "ren'py",
+    url: imgRenPy,
+  },
+  {
+    name: "reactjs",
+    url: imgPostman,
   },
   {
     name: "linux",
